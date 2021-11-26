@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Rubik", sans-serif;
+}
+
+:root {
+  /* Primary */
+  --blue: hsl(246, 80%, 60%);
+  --light-red-work: hsl(15, 100%, 70%);
+  --soft-blue-play: hsl(195, 74%, 62%);
+  --light-red-study: hsl(348, 100%, 68%);
+  --lime-green: hsl(145, 58%, 55%);
+  --violet: hsl(264, 64%, 52%);
+  --soft-orange: hsl(43, 84%, 65%);
+  /* Neutral */
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+}
+
+.grid-container {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-areas:
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7";
+  background-color: var(--very-dark-blue);
+  padding: 35px 20px;
+  color: white;
+  grid-gap: 40px;
+}
+
+.card-1 {
+  grid-area: 1;
+  background-color: var(--dark-blue);
+  border-radius: 10px;
+}
+
+.card-1__capa-superior {
+  background-color: var(--blue);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0px;
+  color: var(--pale-blue);
+}
+
+.card-1__capa-superior #jeremy {
+  width: 70px;
+  border-radius: 100%;
+  border: 2px solid white;
+}
+
+.card-1__desc {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  color: var(--pale-blue);
+}
+
+.card-2 {
+  width: 100%;
+  grid-area: 2;
+  background-image: url(images/icon-work.svg);
+  background-repeat: no-repeat;
+  background-position: top right 10px;
+  background-size: 50px;
+  border-radius: 10px;
+  height: max-content;
+  background-color: hsl(15, 100%, 70%);
+  position: relative;
+  padding-top: 35px;
+}
+
+.container-card-2 {
+  width: 100%;
+  height: max-content;
+  background-color: var(--dark-blue);
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.container-card-2__right {
+  text-align: right;
+  color: var(--pale-blue);
+}
+.container-card-2__right img,
+.container-card-2__left .up {
+  margin-bottom: 9px;
+}
+
+/* CARD 3 */
+.card-3 {
+  grid-area: 3;
+  background-color: var(--soft-blue-play);
+  border-radius: 10px;
+  height: max-content;
+  background-image: url(images/icon-play.svg);
+  background-repeat: no-repeat;
+  background-position: top right 20px;
+  background-size: 57px;
+  padding-top: 35px;
+}
+.card-4 {
+  grid-area: 4;
+  background-color: var(--light-red-study);
+  border-radius: 10px;
+  height: max-content;
+  padding-top: 35px;
+  background-image: url(images/icon-study.svg);
+  background-repeat: no-repeat;
+  background-position: top right 20px;
+  background-size: 55px;
+}
+.card-5 {
+  grid-area: 5;
+  background-color: var(--lime-green);
+  border-radius: 10px;
+  height: max-content;
+  padding-top: 35px;
+  background-image: url(images/icon-exercise.svg);
+  background-repeat: no-repeat;
+  background-position: top right 20px;
+  background-size: 55px;
+}
+.card-6 {
+  grid-area: 6;
+  background-color: var(--violet);
+  border-radius: 10px;
+  height: max-content;
+  padding-top: 35px;
+  background-image: url(images/icon-social.svg);
+  background-repeat: no-repeat;
+  background-position: top right 20px;
+  background-size: 55px;
+}
+.card-7 {
+  grid-area: 7;
+  background-color: var(--soft-orange);
+  border-radius: 10px;
+  height: max-content;
+  padding-top: 35px;
+  background-image: url(images/icon-self-care.svg);
+  background-repeat: no-repeat;
+  background-position: top right 20px;
+  background-size: 55px;
+}
+
+/*Create media queria with min width 1440px*/
+@media (min-width: 1440px) {
+  .grid-container {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: stretch;
+    align-items: center;
+    padding: 160px 120px 0px;
+  }
+
+  .card-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 0;
+    grid-row-end: 3;
+  }
+
+  .card-1__capa-superior{
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      padding: 10px 20px 5px;
+      justify-content: space-around;
+  }
+  .card-1__capa-superior img{
+      margin-top: 1px 0;
+      margin-bottom: 50px;
+  }
+  .card-1__capa-superior__desc b{
+      font-weight: normal;
+      display: block;
+      font-size: 30px;
+  }
+  .card-1__capa-superior__desc .report{
+      padding-bottom: 5px;
+  }
+
+  .card-1__desc {
+      display: block;
+  }
+  .card-1__desc > *{
+      padding: 5px 0;
+  }
+
+  .card-2 {
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
+  .card-3 {
+    grid-row-start: 1;
+  }
+  .card-4 {
+    grid-row-start: 1;
+  }
+  .card-5 {
+    grid-row-start: 2;
+  }
+  .card-6 {
+    grid-row-start: 2;
+  }
+  .card-7 {
+    grid-row-start: 2;
+  }
+}
